@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <script data-require="jquery@*" data-semver="1.9.1" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous"
+    />
+    <script data-require="bootstrap@3.0.0" data-semver="3.0.0" src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="script.js"></script>
+    <title>Calculator</title>
+  </head> 
+
+  <body>
+    <div class="container">
+      <div id="calculator">
+        <textarea id="calcScreen" class="form-control" rows="1" placeholder="" id="res" disabled></textarea>
+        <br />
+        <button type="button" class="btn btn-default" onclick="calcScreen.value = ' '">CE</button>
+        <button type="button" class="btn btn-default" onclick="backspace(calcScreen.value)">&#8592;</button>
+        <button type="button" class="btn btn-default" onclick="power()">x<sup>2</sup></button>
+        <button type="button" class="btn btn-default" onclick="addToTextArea('/')">&divide;</button>
+        <br />
+
+        <button type="button" class="btn btn-info" onclick="addToTextArea('7')">7</button>
+        <button type="button" class="btn btn-info" onclick="addToTextArea('8')">8</button>
+        <button type="button" class="btn btn-info" onclick="addToTextArea('9')">9</button>
+        <button type="button" class="btn btn-default" onclick="addToTextArea('*')">x</button>
+        <br />
+        <button type="button" class="btn btn-info" onclick="addToTextArea('4')">4</button>
+        <button type="button" class="btn btn-info" onclick="addToTextArea('5')">5</button>
+        <button type="button" class="btn btn-info" onclick="addToTextArea('6')">6</button>
+        <button type="button" class="btn btn-default" onclick="addToTextArea('-')">-</button>
+        <br />
+        <button type="button" class="btn btn-info" onclick="addToTextArea('1')">1</button>
+        <button type="button" class="btn btn-info" onclick="addToTextArea('2')">2</button>
+        <button type="button" class="btn btn-info" onclick="addToTextArea('3')">3</button>
+        <button type="button" class="btn btn-default" onclick="addToTextArea('+')">+</button>
+        <br />
+        <button class="btn btn-info" disabled>&nbsp;</button>
+        <button type="button" class="btn btn-info" onclick="addToTextArea('0')">0</button>
+        <button class="btn btn-info" disabled>&nbsp;</button>
+        <button type="button" class="btn btn-primary" onclick="calcEval()">=</button>
+        <br />
+      </div>
+    </div>
+    
+    <div class="container mt-3">
+      <div class="jumbotron py-2">
+        <p>Calculator history</p>
+        <ol id="history">
+        </ol>
+      </div>
+    </div>
+  </body>
+
+</html>
